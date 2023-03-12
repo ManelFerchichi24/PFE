@@ -738,583 +738,932 @@ class NotDelivered extends StatelessWidget {
         ),
         //
         body: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.all(15),
-                child: TextField(
-                  // onChanged: (value) => _runFilter(value),
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 15),
-                    hintText: "Rechercher",
-                    suffixIcon: const Icon(Icons.search),
-                    // prefix: Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                      borderSide: const BorderSide(),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.all(15),
+                  child: TextField(
+                    // onChanged: (value) => _runFilter(value),
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 15),
+                      hintText: "Rechercher",
+                      suffixIcon: const Icon(Icons.search),
+                      // prefix: Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: const BorderSide(),
+                      ),
                     ),
                   ),
                 ),
-              ),
 
-              Center(
-                child: Text(
-                  'Total: 20',
-                  style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 24,
-                      color: Colors.black87),
+                Center(
+                  child: Text(
+                    'Total: 20',
+                    style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                        color: Colors.black87),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
+                SizedBox(
+                  height: 20.0,
+                ),
 
-              //Banner PART
-              Center(
-                child: Container(
-                    height: 50.0,
-                    width: 420.0,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xff334192), Color(0xff3d4eaf)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                //Banner PART
+                Center(
+                  child: Container(
+                      height: 50.0,
+                      width: 420.0,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xff334192), Color(0xff3d4eaf)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text(
-                            'Information Commande',
-                            style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontSize: 15.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              'Information Commande',
+                              style: TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: 15.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Details',
-                            style: TextStyle(
-                              fontFamily: 'Inter',
-                              fontSize: 15.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
-                      ),
-                    )),
-              ),
+                            Text(
+                              'Details',
+                              style: TextStyle(
+                                fontFamily: 'Inter',
+                                fontSize: 15.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
+                          ],
+                        ),
+                      )),
+                ),
 
-              SizedBox(
-                height: 5.0,
-              ),
-              //CARD PART
-              Center(
-                child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'عقدة الاقلاع عن التدخين',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 22,
-                                    color: Colors.black87),
+                SizedBox(
+                  height: 5.0,
+                ),
+                //CARD PART
+                Center(
+                  child: Card(
+                      margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'عقدة الاقلاع عن التدخين',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 22,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  '3200DA',
+                                  style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Boutique: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'dz shop maker',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Client: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'محمد قيدون',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(children: [
+                              SizedBox(
+                                height: 40,
                               ),
                               Text(
-                                '3200DA',
-                                style: GoogleFonts.openSans(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              )
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Boutique: ',
+                                'Wilaya: ',
                                 style: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     color: Colors.black87),
                               ),
                               Text(
-                                'dz shop maker',
+                                'Alger',
                                 style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
                                     color: Colors.black87),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Client: ',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                              Text(
-                                'محمد قيدون',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                            ],
-                          ),
-                          Row(children: [
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Text(
-                              'Wilaya: ',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            Text(
-                              'Alger',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Icon(
-                              Icons.circle,
-                              color: Colors.black26,
-                              size: 12,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Commune: ',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            Text(
-                              'Alger',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            )
-                          ]),
-                          SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF2E409B),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.call,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: Text('Appeler'),
-                                onPressed: () {},
-                              ),
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF2E409B),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.edit,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: const Text('Mettre à jour'),
-                                onPressed: () {},
                               ),
                               SizedBox(
                                 width: 10,
                               ),
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF1D2240),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.reorder,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: const Text('Détails'),
-                                onPressed: () {},
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    )),
-              ),
-              Center(
-                child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'عقدة الاقلاع عن التدخين',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 22,
-                                    color: Colors.black87),
-                              ),
-                              Text(
-                                '3200DA',
-                                style: GoogleFonts.openSans(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              )
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Boutique: ',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                              Text(
-                                'dz shop maker',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Client: ',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                              Text(
-                                'محمد قيدون',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                            ],
-                          ),
-                          Row(children: [
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Text(
-                              'Wilaya: ',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            Text(
-                              'Alger',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Icon(
-                              Icons.circle,
-                              color: Colors.black26,
-                              size: 12,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Commune: ',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            Text(
-                              'Alger',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            )
-                          ]),
-                          SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF2E409B),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.call,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: Text('Appeler'),
-                                onPressed: () {},
-                              ),
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF2E409B),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.edit,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: const Text('Mettre à jour'),
-                                onPressed: () {},
+                              Icon(
+                                Icons.circle,
+                                color: Colors.black26,
+                                size: 12,
                               ),
                               SizedBox(
                                 width: 10,
                               ),
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF1D2240),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.reorder,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: const Text('Détails'),
-                                onPressed: () {},
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    )),
-              ),
-              Center(
-                child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
                               Text(
-                                'عقدة الاقلاع عن التدخين',
+                                'Commune: ',
                                 style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
                                     color: Colors.black87),
                               ),
                               Text(
-                                '3200DA',
-                                style: GoogleFonts.openSans(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
                                     color: Colors.black87),
                               )
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Boutique: ',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                              Text(
-                                'dz shop maker',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Client: ',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                              Text(
-                                'محمد قيدون',
-                                style: GoogleFonts.inter(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16,
-                                    color: Colors.black87),
-                              ),
-                            ],
-                          ),
-                          Row(children: [
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Text(
-                              'Wilaya: ',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            Text(
-                              'Alger',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Icon(
-                              Icons.circle,
-                              color: Colors.black26,
-                              size: 12,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Commune: ',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 14,
-                                  color: Colors.black87),
-                            ),
-                            Text(
-                              'Alger',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 14,
-                                  color: Colors.black87),
+                            ]),
+                            SizedBox(height: 5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.call,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: Text('Appeler'),
+                                  onPressed: () {},
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Mettre à jour'),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF1D2240),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.reorder,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Détails'),
+                                  onPressed: () {},
+                                ),
+                              ],
                             )
-                          ]),
-                          SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF2E409B),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
+                          ],
+                        ),
+                      )),
+                ),
+                Center(
+                  child: Card(
+                      margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'عقدة الاقلاع عن التدخين',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 22,
+                                      color: Colors.black87),
                                 ),
-                                icon: const Icon(
-                                  Icons.call,
-                                  color: Colors.white,
-                                  size: 15.0,
+                                Text(
+                                  '3200DA',
+                                  style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Boutique: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
                                 ),
-                                label: Text('Appeler'),
-                                onPressed: () {},
+                                Text(
+                                  'dz shop maker',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Client: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'محمد قيدون',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(children: [
+                              SizedBox(
+                                height: 40,
                               ),
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF2E409B),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.edit,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: const Text('Mettre à jour'),
-                                onPressed: () {},
+                              Text(
+                                'Wilaya: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
                               ),
                               SizedBox(
                                 width: 10,
                               ),
-                              ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xFF1D2240),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)),
-                                ),
-                                icon: const Icon(
-                                  Icons.reorder,
-                                  color: Colors.white,
-                                  size: 15.0,
-                                ),
-                                label: const Text('Détails'),
-                                onPressed: () {},
+                              Icon(
+                                Icons.circle,
+                                color: Colors.black26,
+                                size: 12,
                               ),
-                            ],
-                          )
-                        ],
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Commune: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              )
+                            ]),
+                            SizedBox(height: 5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.call,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: Text('Appeler'),
+                                  onPressed: () {},
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Mettre à jour'),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF1D2240),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.reorder,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Détails'),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
+                ),
+                Center(
+                  child: Card(
+                      margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                    )),
-              ),
-            ],
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'عقدة الاقلاع عن التدخين',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 22,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  '3200DA',
+                                  style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Boutique: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'dz shop maker',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Client: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'محمد قيدون',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(children: [
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Text(
+                                'Wilaya: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Icon(
+                                Icons.circle,
+                                color: Colors.black26,
+                                size: 12,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Commune: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              )
+                            ]),
+                            SizedBox(height: 5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.call,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: Text('Appeler'),
+                                  onPressed: () {},
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Mettre à jour'),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF1D2240),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.reorder,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Détails'),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
+                ),
+                Center(
+                  child: Card(
+                      margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'عقدة الاقلاع عن التدخين',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 22,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  '3200DA',
+                                  style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Boutique: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'dz shop maker',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Client: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'محمد قيدون',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(children: [
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Text(
+                                'Wilaya: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Icon(
+                                Icons.circle,
+                                color: Colors.black26,
+                                size: 12,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Commune: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              )
+                            ]),
+                            SizedBox(height: 5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.call,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: Text('Appeler'),
+                                  onPressed: () {},
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Mettre à jour'),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF1D2240),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.reorder,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Détails'),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
+                ),
+                Center(
+                  child: Card(
+                      margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'عقدة الاقلاع عن التدخين',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 22,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  '3200DA',
+                                  style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Boutique: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'dz shop maker',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Client: ',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                                Text(
+                                  'محمد قيدون',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: Colors.black87),
+                                ),
+                              ],
+                            ),
+                            Row(children: [
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Text(
+                                'Wilaya: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Icon(
+                                Icons.circle,
+                                color: Colors.black26,
+                                size: 12,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Commune: ',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                'Alger',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 14,
+                                    color: Colors.black87),
+                              )
+                            ]),
+                            SizedBox(height: 5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.call,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: Text('Appeler'),
+                                  onPressed: () {},
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF2E409B),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Mettre à jour'),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color(0xFF1D2240),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                  ),
+                                  icon: const Icon(
+                                    Icons.reorder,
+                                    color: Colors.white,
+                                    size: 15.0,
+                                  ),
+                                  label: const Text('Détails'),
+                                  onPressed: () {},
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )),
+                ),
+              ],
+            ),
           ),
         ),
       ),
