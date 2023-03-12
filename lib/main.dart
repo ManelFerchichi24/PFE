@@ -1,11 +1,13 @@
 import 'dart:ffi';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/src/material/icons.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: 'the first page ',
-    home: Accueil(),
+    home: NotDelivered(),
   ));
 }
 
@@ -522,19 +524,17 @@ class Accueil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int payement =0 ;
-    int encaissement=0;
-    int nopayed=0;
-    int failed=0;
+    int payement = 0;
+    int encaissement = 0;
+    int nopayed = 0;
+    int failed = 0;
     return MaterialApp(
       theme: ThemeData(),
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-
           backgroundColor: Color(0xFF1D2240),
           title: Center(
-
             child: const Text(
               'Accueil',
               style: TextStyle(
@@ -553,13 +553,13 @@ class Accueil extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: IconButton(
-                  onPressed: (){
-                    //we  need the list of the searches to write the functions and code
-                    /*showSearch(context: context,
+                onPressed: () {
+                  //we  need the list of the searches to write the functions and code
+                  /*showSearch(context: context,
                         delegate: CustomSearchDelegate(),
                     );*/
-                  },
-                  icon: const Icon(Icons.search),
+                },
+                icon: const Icon(Icons.search),
               ),
             )
           ],
@@ -568,18 +568,19 @@ class Accueil extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: <Widget>[
-            SizedBox(
-              height: 5.0,
-            ),
+              SizedBox(
+                height: 5.0,
+              ),
               Row(
                 //info 2texts
                 children: <Widget>[
                   Expanded(
                     child: Container(
-                      height:50.0,
+                      height: 50.0,
                       child: Card(
                         color: Color(0xFFD0D1DA),
-                        margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 4.0),
+                        margin: EdgeInsets.symmetric(
+                            vertical: 5.0, horizontal: 4.0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
@@ -599,10 +600,11 @@ class Accueil extends StatelessWidget {
                   ),
                   Expanded(
                     child: Container(
-                      height:50.0,
+                      height: 50.0,
                       child: Card(
                         color: Color(0xFFD0D1DA),
-                        margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 4.0),
+                        margin: EdgeInsets.symmetric(
+                            vertical: 5.0, horizontal: 4.0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
@@ -620,10 +622,6 @@ class Accueil extends StatelessWidget {
                       ),
                     ),
                   ),
-
-
-
-
                 ],
               ),
               //text
@@ -634,18 +632,17 @@ class Accueil extends StatelessWidget {
                     children: <Widget>[
                       Expanded(
                         child: Container(
-                          height:120.0,
+                          height: 120.0,
                           child: Card(
                             color: Color(0xFFD0D1DA),
-                            margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 4.0),
+                            margin: EdgeInsets.symmetric(
+                                vertical: 5.0, horizontal: 4.0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: Center(
-
                               child: Column(
                                 children: [
-
                                   Text(
                                     "Non Livrées",
                                     style: TextStyle(
@@ -665,16 +662,16 @@ class Accueil extends StatelessWidget {
                                     ),
                                   ),
                                   TextButton(
-                                    onPressed: (){},
+                                    onPressed: () {},
                                     child: Text(
-                                    "A payer : $payement DA",
-                                    style: TextStyle(
-                                      fontFamily: 'Inter',
-                                      fontSize: 15.0,
-                                      color: Color(0xFF464343),
-                                      fontWeight: FontWeight.bold,
+                                      "A payer : $payement DA",
+                                      style: TextStyle(
+                                        fontFamily: 'Inter',
+                                        fontSize: 15.0,
+                                        color: Color(0xFF464343),
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
                                   )
                                 ],
                               ),
@@ -712,3 +709,233 @@ class CustomSearchDelegate extends SearchDelegate{
   List<Widget> buildActions(BuildContext context){}
 }
 */
+
+///////////////////////////////////////////////////////////////// page commandes non livrées //////////////////////////////////////////////////////////////////////
+
+class NotDelivered extends StatelessWidget {
+  const NotDelivered({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //variables here
+    return MaterialApp(
+      theme: ThemeData(),
+      home: Scaffold(
+        backgroundColor: Color(0xFFEFEDED),
+        appBar: AppBar(
+          backgroundColor: Color(0xFF1D2240),
+          title: Center(
+            child: const Text(
+              'Accueil',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 18.0,
+                color: Colors.white,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
+        ),
+        //
+        body: SafeArea(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.all(15),
+                child: TextField(
+                  // onChanged: (value) => _runFilter(value),
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 15),
+                    hintText: "Search",
+                    suffixIcon: const Icon(Icons.search),
+                    // prefix: Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                      borderSide: const BorderSide(),
+                    ),
+                  ),
+                ),
+              ),
+
+              Center(
+                child: Text(
+                  'Commandes Non Livrées',
+                  style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24,
+                      color: Colors.black87),
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+
+              //Banner PART
+              Center(
+                child: Container(
+                    height: 50.0,
+                    width: 420.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xff334192), Color(0xff3d4eaf)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text(
+                            'Information Commande',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 15.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            'Details',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 15.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                    )),
+              ),
+
+              SizedBox(
+                height: 5.0,
+              ),
+              //CARD PART
+              Center(
+                child: Card(
+                    margin: EdgeInsets.symmetric(vertical: 6, horizontal: 7),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Nom du Produit',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 22,
+                                    color: Colors.black87),
+                              ),
+                              Text(
+                                '3200DA',
+                                style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: Colors.black87),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Nom du Client',
+                                style: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16,
+                                    color: Colors.black87),
+                              ),
+                            ],
+                          ),
+                          Row(children: [
+                            Text(
+                              'Adresse: ',
+                              style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                  color: Colors.black87),
+                            ),
+                            Text(
+                              'Rue de mohamed Fateh',
+                              style: GoogleFonts.inter(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 14,
+                                  color: Colors.black87),
+                            )
+                          ]),
+                          SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  ElevatedButton.icon(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xFF2E409B),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                    ),
+                                    icon: const Icon(
+                                      Icons.call,
+                                      color: Colors.white,
+                                      size: 15.0,
+                                    ),
+                                    label: Text('Appeler'),
+                                    onPressed: () {},
+                                  ),
+                                  SizedBox(width: 10),
+                                  ElevatedButton.icon(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Color(0xFF2E409B),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                    ),
+                                    icon: const Icon(
+                                      Icons.message,
+                                      color: Colors.white,
+                                      size: 15.0,
+                                    ),
+                                    label: const Text('Message'),
+                                    onPressed: () {},
+                                  )
+                                ],
+                              ),
+                              ElevatedButton.icon(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xFF2E409B),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)),
+                                ),
+                                icon: const Icon(
+                                  Icons.edit,
+                                  color: Colors.white,
+                                  size: 15.0,
+                                ),
+                                label: const Text('Mettre à jour'),
+                                onPressed: () {},
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    )),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
